@@ -1,33 +1,14 @@
 package com.example.k_buddy.data.onBoard.repository
 
+import com.example.k_buddy.data.ServiceConnector
 import com.example.k_buddy.data.onBoard.dto.login.UserLoginReqDTO
 import com.example.k_buddy.data.onBoard.dto.login.UserLoginResDTO
-import com.example.k_buddy.data.onBoard.dto.register.UserRegisterReqDTO
-import com.example.k_buddy.data.onBoard.dto.register.UserRegisterResDTO
 import com.example.k_buddy.data.onBoard.service.OnBoardService
+import retrofit2.Response
 
-class OnBoardingRepositoryImpl(
-    private val onBoardService: OnBoardService
-) : OnBoardingRepository {
-    override suspend fun userLogin(userId: String, password: String): UserLoginResDTO =
-        onBoardService.postUserLogin(
-            UserLoginReqDTO(
-                userId = userId,
-                password = password
-            )
-        )
-
-    override suspend fun userRegister(
-        mobileNo: String,
-        password: String,
-        name: String,
-        role: String
-    ): UserRegisterResDTO = onBoardService.postUserRegister(
-        UserRegisterReqDTO(
-            userId = mobileNo,
-            password = password,
-            name = name,
-            role = role,
-        )
-    )
+class OnBoardingRepositoryImpl() : OnBoardingRepository {
+    private val onBoardService: OnBoardService = ServiceConnector.onBoardService
+    override suspend fun userLogin(requestDTO: UserLoginReqDTO): Response<UserLoginResDTO> {
+        return onBoardService.postUserLogin(requestDTO)
+    }
 }
