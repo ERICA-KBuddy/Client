@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="loginRed">#C68383</color>
+    <color name="loginGray">#F4F4F4</color>
+    <color name="loginButtonRed">#8E0808</color>
 </resources>
