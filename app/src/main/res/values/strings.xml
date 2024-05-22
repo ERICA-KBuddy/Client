@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">K_Buddy</string>
+    <string name="title_activity_main_page">MainPageActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_market">Market</string>
+    <string name="title_mypage">MyPage</string>
 </resources>

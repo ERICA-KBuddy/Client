@@ -13,6 +13,10 @@
         android:theme="@style/Theme.K_Buddy"
         tools:targetApi="31">
         <activity
+            android:name=".ui.mainPage.MainPageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main_page" />
+        <activity
             android:name=".ui.profileEdit.profileEditActivity"
             android:exported="false" />
         <activity
@@ -26,7 +30,7 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

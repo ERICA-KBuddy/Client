@@ -11,7 +11,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import com.example.k_buddy.R
 import com.example.k_buddy.databinding.ActivityLoginBinding
-import com.example.k_buddy.ui.MainActivity
+import com.example.k_buddy.ui.mainPage.MainPageActivity
 import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
@@ -75,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
             /*
                 임시로 화면 전환
              */
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainPageActivity::class.java)
             startActivity(intent)
             finish()
 
