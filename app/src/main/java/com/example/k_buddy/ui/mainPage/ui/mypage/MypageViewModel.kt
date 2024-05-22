@@ -1,4 +1,4 @@
-package com.example.k_buddy.ui.mainPage.ui.notifications
+package com.example.k_buddy.ui.mainPage.ui.mypage
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
