@@ -2,5 +2,4 @@
     android:shape="oval">
     <solid android:color="#000000"/>
     <size android:width="16dp" android:height="16dp"/>
-    <item android:drawable="@drawable/ic_check" android:gravity="center"/>
 </shape>
