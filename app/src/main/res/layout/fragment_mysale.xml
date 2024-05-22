@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.mainPage.ui.mypage.MysaleFragment">
+    tools:context=".ui.mainPage.ui.mypage.mysale.MysaleFragment">
 
     <!-- Filter and Sort by buttons -->
     <LinearLayout

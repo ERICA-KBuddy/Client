@@ -1,4 +1,4 @@
-package com.example.k_buddy.ui.mainPage.ui.mypage
+package com.example.k_buddy.ui.mainPage.ui.mypage.mysale
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

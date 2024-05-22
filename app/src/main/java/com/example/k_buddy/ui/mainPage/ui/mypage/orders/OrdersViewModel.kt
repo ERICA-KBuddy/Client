@@ -1,4 +1,4 @@
-package com.example.k_buddy.ui.mainPage.ui.mypage
+package com.example.k_buddy.ui.mainPage.ui.mypage.orders
 
 import androidx.lifecycle.ViewModel
 

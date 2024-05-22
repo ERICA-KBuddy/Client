@@ -3,8 +3,8 @@ package com.example.k_buddy.ui.myPage
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.k_buddy.ui.mainPage.ui.mypage.MysaleFragment
-import com.example.k_buddy.ui.mainPage.ui.mypage.OrdersFragment
+import com.example.k_buddy.ui.mainPage.ui.mypage.mysale.MysaleFragment
+import com.example.k_buddy.ui.mainPage.ui.mypage.orders.OrdersFragment
 
 class MyPageAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
