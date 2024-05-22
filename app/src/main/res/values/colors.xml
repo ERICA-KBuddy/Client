@@ -7,4 +7,8 @@
     <color name="loginRed">#C68383</color>
     <color name="loginGray">#F4F4F4</color>
     <color name="loginButtonRed">#8E0808</color>
+
+    <color name="nav_selected_color">#AD3737</color> <!-- 선택된 아이템의 색상 -->
+    <color name="nav_unselected_color">#767676</color> <!-- 비활성화된 아이템의 색상 -->
+
 </resources>
