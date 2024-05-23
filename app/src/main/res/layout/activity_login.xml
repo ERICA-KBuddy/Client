@@ -1,177 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:padding="16dp"
     tools:context=".ui.login.LoginActivity">
 
+    <TextView
+        android:id="@+id/onboard_top_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up or Log In"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:layout_gravity="left" />
+
+    <View
+        android:layout_below="@id/onboard_top_bar"
+        android:id="@+id/divider_onboard_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="16dp" />
+
     <LinearLayout
+        android:layout_below="@+id/divider_onboard_top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up or Log In"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_gravity="left"
-            android:paddingBottom="16dp" />
-
-        <LinearLayout
-            android:id="@+id/boxCreateAccount"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/loginGray"
-            android:padding="8dp"
-            android:layout_marginBottom="1dp">
-
-            <RadioButton
-                android:id="@+id/radioCreateAccount"
+            android:layout_marginHorizontal="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Create Account"
-                android:textSize="18sp" />
-
-            <!-- Create Account Section -->
-            <LinearLayout
-                android:id="@+id/createAccountSection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone"
-                android:paddingTop="16dp">
-
-                <EditText
-                    android:id="@+id/editTextFirstName"
+                android:layout_height="wrap_content">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="First name" />
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/editTextLastName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Last name"
-                    android:layout_marginTop="16dp" />
+                    <!-- Create Account Section -->
+                    <LinearLayout
+                        android:id="@+id/boxCreateAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/loginGray"
+                        android:padding="8dp">
 
-                <EditText
-                    android:id="@+id/editTextUserId"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="User ID"
-                    android:layout_marginTop="16dp" />
+                        <RadioButton
+                            android:id="@+id/radioCreateAccount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Create Account"
+                            android:textSize="18sp"
+                            style="@style/CustomRadioButton"/>
 
-                <TextView
-                    android:id="@+id/textUserIdStatus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@android:color/holo_green_dark"
-                    android:layout_marginTop="8dp" />
+                        <LinearLayout
+                            android:id="@+id/createAccountSection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:paddingTop="16dp">
 
-                <EditText
-                    android:id="@+id/editTextPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:layout_marginTop="16dp"
-                    android:inputType="textPassword" />
+                            <EditText
+                                android:id="@+id/editTextFirstName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="First name" />
 
-                <TextView
-                    android:id="@+id/textPasswordCriteria"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="• At least 8 characters.\n• At least 1 uppercase.\n• At least 1 number."
-                    android:layout_marginTop="8dp" />
+                            <EditText
+                                android:id="@+id/editTextLastName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Last name"
+                                android:layout_marginTop="16dp" />
 
-                <EditText
-                    android:id="@+id/editTextConfirmPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:layout_marginTop="16dp"
-                    android:inputType="textPassword" />
+                            <EditText
+                                android:id="@+id/editTextUserId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="User ID"
+                                android:layout_marginTop="16dp" />
 
-                <TextView
-                    android:id="@+id/textPasswordMatch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Matching password."
-                    android:textColor="@android:color/holo_green_dark"
-                    android:layout_marginTop="8dp" />
+                            <TextView
+                                android:id="@+id/textUserIdStatus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@android:color/holo_green_dark"
+                                android:layout_marginTop="8dp" />
 
-                <Button
-                    android:id="@+id/buttonSignUp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Sign up"
-                    android:backgroundTint="@color/loginButtonRed"
-                    android:textColor="@android:color/white"
-                    android:layout_marginTop="16dp" />
-            </LinearLayout>
-        </LinearLayout>
+                            <EditText
+                                android:id="@+id/editTextPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Password"
+                                android:layout_marginTop="16dp"
+                                android:inputType="textPassword" />
 
-        <LinearLayout
-            android:id="@+id/boxLogIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/loginGray"
-            android:padding="8dp">
+                            <TextView
+                                android:id="@+id/textPasswordCriteria"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="• At least 8 characters.\n• At least 1 uppercase.\n• At least 1 number."
+                                android:layout_marginTop="8dp" />
 
-            <RadioButton
-                android:id="@+id/radioLogIn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Log In"
-                android:textSize="18sp" />
+                            <EditText
+                                android:id="@+id/editTextConfirmPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Password"
+                                android:layout_marginTop="16dp"
+                                android:inputType="textPassword" />
 
-            <!-- Log In Section -->
-            <LinearLayout
-                android:id="@+id/logInSection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone"
-                android:paddingTop="16dp">
+                            <TextView
+                                android:id="@+id/textPasswordMatch"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Matching password."
+                                android:textColor="@android:color/holo_green_dark"
+                                android:layout_marginTop="8dp" />
 
-                <EditText
-                    android:id="@+id/editTextLoginUserId"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email address or user ID"
-                    android:layout_marginTop="16dp" />
+                            <Button
+                                android:id="@+id/buttonSignUp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sign up"
+                                android:background="@drawable/onboard_red_button"
+                                android:textColor="@android:color/white"
+                                android:layout_marginTop="16dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray" />
+                    <!-- Log In Section -->
+                    <LinearLayout
+                        android:id="@+id/boxLogIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/loginGray"
+                        android:padding="8dp">
 
-                <EditText
-                    android:id="@+id/editTextLoginPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:layout_marginTop="16dp"
-                    android:inputType="textPassword" />
+                        <RadioButton
+                            android:id="@+id/radioLogIn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Log In"
+                            android:textSize="18sp"
+                            style="@style/CustomRadioButton"/>
 
-                <Button
-                    android:id="@+id/buttonLogIn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Log in"
-                    android:backgroundTint="@color/loginButtonRed"
-                    android:textColor="@android:color/white"
-                    android:layout_marginTop="16dp" />
-            </LinearLayout>
-        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/logInSection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:paddingTop="16dp">
+
+                            <EditText
+                                android:id="@+id/editTextLoginUserId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Email address or user ID"
+                                android:layout_marginTop="16dp" />
+
+                            <EditText
+                                android:id="@+id/editTextLoginPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Password"
+                                android:layout_marginTop="16dp"
+                                android:inputType="textPassword" />
+
+                            <Button
+                                android:id="@+id/buttonLogIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Log in"
+                                android:background="@drawable/onboard_red_button"
+                                android:textColor="@android:color/white"
+                                android:layout_marginTop="16dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+
+        </androidx.cardview.widget.CardView>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_margin="16dp"/>
+
+        <Button
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/mypage_round_button_1"
+            android:layout_gravity="center"
+            android:textColor="@color/darkgray"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:text="Continue with Google"/>
 
     </LinearLayout>
-</ScrollView>
+</RelativeLayout>
