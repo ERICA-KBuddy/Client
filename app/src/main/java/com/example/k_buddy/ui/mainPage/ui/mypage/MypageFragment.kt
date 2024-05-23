@@ -60,8 +60,8 @@ class MypageFragment : Fragment() {
     }
 
     private fun setupViewPagerAndTabs() {
-        val viewPager = binding.viewPager
-        val tabLayout = binding.tabLayout
+        val viewPager = binding.myPageViewPager
+        val tabLayout = binding.myPageTabLayout
         val adapter = MyPageAdapter(requireActivity())
         viewPager.adapter = adapter
 

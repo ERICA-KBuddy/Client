@@ -2,60 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.mainPage.ui.mypage.mysale.MysaleFragment">
 
-    <!-- Create listing button -->
-    <Button
-        android:id="@+id/button_create_listing"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/mypage_create_listing_button"
-        android:text="Create listing"
-        android:textColor="@android:color/white" />
-
-    <!-- Filter and Sort by buttons -->
-    <LinearLayout
-        android:id="@+id/button_container"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/button_create_listing"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/button_filter"
-            android:layout_width="70dp"
-            android:layout_height="30dp"
-            android:text="Filter"
-            android:textColor="#8A8B8E"
-            android:background="@drawable/mypage_round_button_1"
-            android:drawablePadding="8dp"
-            android:layout_marginEnd="8dp"/>
-
-        <Button
-            android:id="@+id/button_sort_by"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Sort by"
-            android:textColor="#8A8B8E"
-            android:background="@drawable/mypage_round_button_1"
-            android:drawablePadding="8dp" />
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <!-- RecyclerView for displaying items -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/button_container"
-        android:layout_marginTop="8dp"
-        tools:listitem="@layout/item_mysale"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/my_sale_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/my_sale_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </ScrollView>
+    <!-- Tabs Section -->
+
+
 </RelativeLayout>

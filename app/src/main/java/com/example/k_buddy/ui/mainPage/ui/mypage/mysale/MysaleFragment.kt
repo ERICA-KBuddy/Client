@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.k_buddy.databinding.FragmentMysaleBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MysaleFragment : Fragment() {
 
@@ -26,9 +26,23 @@ class MysaleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupViewPagerAndTabs()
+    }
+    private fun setupViewPagerAndTabs() {
+        // ViewPager 설정
+        val viewPager = binding.mySaleViewPager
+        val tabLayout = binding.mySaleTabLayout
+        val adapter = MysaleAdapter(requireActivity())
+        viewPager.adapter = adapter
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        binding.recyclerView.adapter = MysaleAdapter(viewModel.items)
+        // TabLayout과 ViewPager 연결
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = when (position) {
+                0 -> "Sales"
+                1 -> "Listings"
+                else -> null
+            }
+        }.attach()
     }
 
     override fun onDestroyView() {
