@@ -6,27 +6,53 @@
     tools:context=".ui.mainPage.ui.mypage.mysale.MysaleFragment">
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/my_sale_tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="50dp"
+                android:layout_gravity="center_horizontal"
+                app:cardElevation="4dp">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/my_sale_view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_profile_round_button_2"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/button_sales"
+                        android:layout_width="135dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/mysale_clicked_button"
+                        android:textSize="14dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="Sales"/>
+
+                    <Button
+                        android:id="@+id/button_listings"
+                        android:layout_width="135dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/mysale_unclicked_button"
+                        android:textSize="14dp"
+                        android:layout_marginVertical="5dp"
+                        android:text="Listings"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/my_sale_view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
     </ScrollView>
-    <!-- Tabs Section -->
-
 
 </RelativeLayout>
