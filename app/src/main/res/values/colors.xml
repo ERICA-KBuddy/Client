@@ -11,4 +11,7 @@
     <color name="nav_selected_color">#AD3737</color> <!-- 선택된 아이템의 색상 -->
     <color name="nav_unselected_color">#767676</color> <!-- 비활성화된 아이템의 색상 -->
 
+    <color name="custom_checked_color">#C68383</color> <!-- 체크된 상태의 색상 -->
+    <color name="custom_unchecked_color">#FF000000</color> <!-- 체크되지 않은 상태의 색상 -->
+
 </resources>
