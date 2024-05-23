@@ -12,49 +12,34 @@ import androidx.lifecycle.Observer
 import com.example.k_buddy.R
 import com.example.k_buddy.databinding.ActivityLoginBinding
 import com.example.k_buddy.ui.mainPage.MainPageActivity
-import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
 
     private val loginViewModel: LoginViewModel by viewModels()
     private lateinit var binding: ActivityLoginBinding
-    private var createAccountVisibility = false
-    private var logInVisibility = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*
-            CreateAccount 섹션 클릭 이벤트 처리
-         */
+        // CreateAccount 섹션 클릭 이벤트 처리
         binding.radioCreateAccount.setOnClickListener {
-            if (!createAccountVisibility) {
-                createAccountVisibility = true
-                setCreateAccountVisibility(true)
-                setLogInVisibility(false)
-            } else {
-                createAccountVisibility = false
-                setCreateAccountVisibility(false)
-            }
-            setLogInVisibility(false)
+            loginViewModel.toggleCreateAccountVisibility()
         }
 
-        /*
-            LogIn 섹션 클릭 이벤트 처리
-         */
+        // LogIn 섹션 클릭 이벤트 처리
         binding.radioLogIn.setOnClickListener {
-            if (!logInVisibility) {
-                logInVisibility = true
-                setLogInVisibility(true)
-                binding.radioCreateAccount.isChecked = false
-                setCreateAccountVisibility(false)
-            } else {
-                logInVisibility = false
-                setLogInVisibility(false)
-            }
-            setCreateAccountVisibility(false)
+            loginViewModel.toggleLogInVisibility()
         }
+
+        // ViewModel의 LiveData 관찰
+        loginViewModel.createAccountVisibility.observe(this, Observer { isVisible ->
+            setCreateAccountVisibility(isVisible)
+        })
+
+        loginViewModel.logInVisibility.observe(this, Observer { isVisible ->
+            setLogInVisibility(isVisible)
+        })
 
         /*
             SignUp 버튼 클릭
