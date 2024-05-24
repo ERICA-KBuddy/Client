@@ -1,5 +1,6 @@
 package com.example.k_buddy.ui.mainPage.ui.mypage.mysale.listings
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.k_buddy.R
 import com.example.k_buddy.databinding.FragmentListingsBinding
+import com.example.k_buddy.ui.createListings.createListingsActivity
+import com.example.k_buddy.ui.mainPage.MainPageActivity
 import com.example.k_buddy.ui.mainPage.ui.mypage.orders.OrdersAdapter
 
 class ListingsFragment : Fragment() {
@@ -30,6 +33,11 @@ class ListingsFragment : Fragment() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = ListingsAdapter(viewModel.items)
+
+        binding.buttonCreateListing.setOnClickListener {
+            val intent = Intent(requireActivity(), createListingsActivity::class.java)
+            startActivity(intent)
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()
