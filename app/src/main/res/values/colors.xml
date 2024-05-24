@@ -14,4 +14,5 @@
     <color name="custom_checked_color">#C68383</color> <!-- 체크된 상태의 색상 -->
     <color name="custom_unchecked_color">#FF000000</color> <!-- 체크되지 않은 상태의 색상 -->
 
+    <color name="edit_profile_title_black">#393B3F</color>
 </resources>

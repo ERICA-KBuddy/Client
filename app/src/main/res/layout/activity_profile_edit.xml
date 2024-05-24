@@ -122,122 +122,217 @@
                 android:layout_height="wrap_content"
                 android:text="Describe the details of your service."
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <!-- Title of listing -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
                 android:text="Title of listing *"
-                android:layout_marginTop="16dp"/>
-            <EditText
+                android:textColor="@color/edit_profile_title_black" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter title"
-                android:maxLength="30"/>
+                android:background="@drawable/edit_profile_edit_text_border"
+                android:padding="10dp">
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:maxLength="30" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:background="#C2C1C1"/>
             <!-- Detail -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
                 android:text="Detail *"
-                android:layout_marginTop="16dp"/>
-            <EditText
+                android:textColor="@color/edit_profile_title_black" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:hint="Enter details"
-                android:maxLength="500"
-                android:gravity="top"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_profile_edit_text_border"
+                android:padding="10dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:maxLength="500" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:background="#C2C1C1"/>
 
             <!-- Hashtags -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
                 android:text="Hashtags (Optional Field)"
-                android:layout_marginTop="16dp"/>
-            <EditText
+                android:textColor="@color/edit_profile_title_black" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="#"/>
+                android:background="@drawable/edit_profile_edit_text_border"
+                android:padding="10dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="#" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:background="#C2C1C1"/>
 
             <!-- Professional Background -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
                 android:text="Professional Background *"
-                android:layout_marginTop="16dp"/>
-            <EditText
+                android:textColor="@color/edit_profile_title_black" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Example: a license, certificate, degree, or resume for relevant work experience."
-                android:gravity="top"/>
+                android:background="@drawable/edit_profile_edit_text_border"
+                android:padding="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:hint="Example: a license, certificate, degree, or resume for relevant work experience." />
+            </LinearLayout>
+
             <Button
+                android:id="@+id/edit_profile_add_file_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add file of proof"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/edit_profile_round_button_2"
-                android:layout_marginTop="8dp"/>
+                android:text="Add file of proof" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:background="#C2C1C1"/>
 
             <!-- Add photo(s) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Add photo(s) *"
-                android:layout_marginTop="16dp"/>
+                android:textColor="@color/edit_profile_title_black" />
+
             <Button
+                android:id="@+id/edit_profile_add_photo_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add photo"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/edit_profile_round_button_2"
-                android:layout_marginTop="8dp"/>
+                android:text="Add photo" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:background="#C2C1C1"/>
 
             <!-- Add price for your service -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Add price for your service."
-                android:layout_marginTop="16dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:textColor="@color/edit_profile_title_black" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="170dp"
-                    android:text="Price"/>
-                <EditText
-                    android:layout_width="135dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="won"/>
-            </LinearLayout>
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="8dp">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="100dp"
-                    android:text="Amount of time"/>
-                <EditText
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="day(s)"/>
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/edit_profile_edit_text_border">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginHorizontal="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="160dp"
+                            android:text="Price"
+                            android:textColor="@color/edit_profile_title_black" />
+
+                        <EditText
+                            android:layout_width="135dp"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="won" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginHorizontal="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="90dp"
+                            android:text="Amount of time"
+                            android:textColor="@color/edit_profile_title_black" />
+
+                        <EditText
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="day(s)" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
             <!-- 하단 버튼 -->
             <LinearLayout
@@ -246,19 +341,21 @@
                 android:layout_marginTop="16dp">
 
                 <Button
+                    android:id="@+id/edit_profile_back_button"
                     android:layout_width="35dp"
                     android:layout_height="15dp"
-                    android:background="@color/white"
                     android:layout_marginEnd="200dp"
-                    android:textSize="13dp"
-                    android:text="Back"/>
+                    android:background="@color/white"
+                    android:text="Back"
+                    android:textSize="13dp" />
 
                 <Button
+                    android:id="@+id/edit_profile_next_button"
                     android:layout_width="150dp"
                     android:layout_height="45dp"
-                    android:background="@drawable/edit_profile_round_next_button_gray"
                     android:layout_alignParentEnd="true"
-                    android:text="Next"/>
+                    android:background="@drawable/edit_profile_round_next_button_gray"
+                    android:text="Next" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
