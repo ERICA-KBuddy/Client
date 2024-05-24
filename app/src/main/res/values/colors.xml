@@ -2,8 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="gray">#F4F4F4</color>
+    <color name="darkgray">#767676</color>
     <color name="loginRed">#C68383</color>
     <color name="loginGray">#F4F4F4</color>
     <color name="loginButtonRed">#8E0808</color>
+
+    <color name="nav_selected_color">#AD3737</color> <!-- 선택된 아이템의 색상 -->
+    <color name="nav_unselected_color">#767676</color> <!-- 비활성화된 아이템의 색상 -->
+
+    <color name="custom_checked_color">#C68383</color> <!-- 체크된 상태의 색상 -->
+    <color name="custom_unchecked_color">#FF000000</color> <!-- 체크되지 않은 상태의 색상 -->
+
 </resources>
