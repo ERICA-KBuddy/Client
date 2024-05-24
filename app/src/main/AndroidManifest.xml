@@ -16,7 +16,11 @@
             android:name=".ui.request.Request1Activity"
             android:exported="false" />
         <activity
-            android:name=".ui.MarketActivity"
+            android:name=".ui.mainPage.MainPageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main_page" />
+        <activity
+            android:name=".ui.profileEdit.profileEditActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"
