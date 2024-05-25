@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request Itinerary"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="25dp" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/request2"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Purpose of the trip (Optional Field)"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp">
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/radio_leisure"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Leisure" />
+                    <RadioButton
+                        android:id="@+id/radio_exploration"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Exploration" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/radio_business"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Business" />
+                    <RadioButton
+                        android:id="@+id/radio_other"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Other" />
+                </LinearLayout>
+            </RadioGroup>
+
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/15"
+                android:textSize="13dp"
+                android:textColor="#979797"
+                android:layout_marginRight="30dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E91E63"/>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Top Priorities (Optional Field)"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose your top priorities (up to 5) that matter\n most to you when you travel. Your preferences\nhelp us create the perfect experience just for you!"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- 첫 번째 열 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <CheckBox
+                        android:id="@+id/checkbox_activities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Activities" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_culture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:paddingBottom="4dp"
+                        android:text="Culture\n(Local traditions)" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="History" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_nature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Nature" />
+                    <CheckBox
+                        android:id="@+id/checkbox_relaxation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Relaxation" />
+                </LinearLayout>
+                <!-- 두 번째 열 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <CheckBox
+                        android:id="@+id/checkbox_budget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Budget" />
+                    <CheckBox
+                        android:id="@+id/checkbox_cuisine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Cuisine" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_local_events"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Local events" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_photography"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Photography" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_shopping"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Shopping" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E91E63"/>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferred Transportation (Optional Field)"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select your preferred mode of transportation. You\n can select multiple options."
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <CheckBox
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Rental or owned car" />
+            <CheckBox
+                android:id="@+id/t"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Public transportation\n(Bus and subway)" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <CheckBox
+                android:id="@+id/tx"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Taxi" />
+        </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E91E63"/>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restrictions (Optional Field)"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pleas inform us below of any restrictions you’d\nlike us to consider, such as food allergies, fears,\ndisabilities, etc."
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="10dp">
+            <EditText
+                android:paddingLeft="10dp"
+                android:hint="Tap here to start writing."
+                android:layout_gravity="center"
+                android:background="@drawable/red_ground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/500"
+                android:textSize="13dp"
+                android:textColor="#979797"
+                android:layout_marginRight="30dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E91E63"/>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Additional Comment (Optional Field)"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let us know below if you have any other\npreferences to share with us."
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="10dp"
+            >
+            <EditText
+                android:paddingLeft="10dp"
+                android:hint="Tap here to start writing."
+                android:layout_gravity="center"
+                android:background="@drawable/red_ground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp">
+            <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/500"
+                android:textSize="13dp"
+                android:textColor="#979797"
+                android:layout_marginRight="30dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -19,7 +19,6 @@
             android:id="@+id/image1"
             android:layout_width="240dp"
             android:layout_height="120dp"
-
             android:src="@drawable/temp3"/>
     </androidx.cardview.widget.CardView>
     <TextView

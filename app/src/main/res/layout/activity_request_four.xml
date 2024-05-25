@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/liner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Request Itinerary"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="25dp" />
+    </LinearLayout>
+    <View
+        android:id="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/liner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"/>
+    <ImageView
+        android:id="@+id/step"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/request4"/>
+    <ImageView
+        android:id="@+id/circle"
+        app:layout_constraintTop_toBottomOf="@+id/step"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/gray_circle"/>
+    <TextView
+        android:id="@+id/place"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order placed!"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/thanks"
+        app:layout_constraintTop_toBottomOf="@+id/place"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thanks for submitting your itinerary order!\n
+            You can expect to hear from the seller\nwithin the next 7 days."
+        android:textColor="@color/black"
+        android:alpha="0.7"
+        android:textSize="20dp"/>
+    <Button
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thanks"
+        android:id="@+id/btn"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="OK"
+        android:textColor="@color/white"
+        android:background="#8E0808"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="380dp"
+        android:layout_height="60dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
