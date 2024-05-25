@@ -12,6 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.K_Buddy"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ui.mainPage.ui.market.request.RequestFourActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainPage.ui.market.request.RequestTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainPage.ui.market.request.RequestThreeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainPage.ui.market.request.RequestOneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainPage.ui.market.ConnectionActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.createItinerary.createItineraryActivity"
             android:exported="false" />
@@ -30,7 +46,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
