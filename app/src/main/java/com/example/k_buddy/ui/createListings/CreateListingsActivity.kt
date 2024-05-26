@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.k_buddy.databinding.ActivityCreateListingsBinding
+import com.example.k_buddy.ui.createItinerary.CreateItineraryActivity
 
 class CreateListingsActivity : AppCompatActivity() {
 
@@ -24,7 +25,7 @@ class CreateListingsActivity : AppCompatActivity() {
             여행기 작성 버튼 클릭
          */
         binding.buttonCreateItinerary.setOnClickListener {
-            intent = Intent(this, ActivityCreateListingsBinding::class.java)
+            intent = Intent(this, CreateItineraryActivity::class.java)
             startActivity(intent)
             finish()
         }

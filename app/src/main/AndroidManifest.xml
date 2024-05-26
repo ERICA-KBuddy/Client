@@ -29,7 +29,7 @@
             android:name=".ui.mainPage.ui.market.ConnectionActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.createItinerary.createItineraryActivity"
+            android:name=".ui.createItinerary.CreateItineraryActivity"
             android:exported="false" />
         <activity
             android:name=".ui.createListings.CreateListingsActivity"

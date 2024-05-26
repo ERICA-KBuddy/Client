@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.createItinerary.createItineraryActivity">
+    tools:context=".ui.createItinerary.CreateItineraryActivity">
 
     <!-- 상단 고정 영역 -->
     <RelativeLayout
