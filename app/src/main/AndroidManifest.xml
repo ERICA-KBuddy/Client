@@ -34,21 +34,6 @@
         <activity
             android:name=".ui.createListings.createListingsActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.mainPage.ui.market.request.RequestFourActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.mainPage.ui.market.request.RequestTwoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.mainPage.ui.market.request.RequestThreeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.mainPage.ui.market.request.RequestOneActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.mainPage.ui.market.ConnectionActivity"
-            android:exported="false" />
 
         <activity
             android:name=".ui.mainPage.MainPageActivity"
