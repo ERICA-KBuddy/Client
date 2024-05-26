@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.createListings.createListingsActivity">
+    tools:context=".ui.createListings.CreateListingsActivity">
 
     <!-- 상단의 뒤로가기 버튼 -->
     <ImageButton
@@ -175,7 +175,7 @@
 
         </LinearLayout>
     </ScrollView>
-
+    ActivityCreateItineraryBinding
     <!-- 하단의 버튼 -->
     <Button
         android:id="@+id/button_create_itinerary"

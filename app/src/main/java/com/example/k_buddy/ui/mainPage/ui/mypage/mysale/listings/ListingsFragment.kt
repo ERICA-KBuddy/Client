@@ -8,11 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.k_buddy.R
 import com.example.k_buddy.databinding.FragmentListingsBinding
-import com.example.k_buddy.ui.createListings.createListingsActivity
-import com.example.k_buddy.ui.mainPage.MainPageActivity
-import com.example.k_buddy.ui.mainPage.ui.mypage.orders.OrdersAdapter
+import com.example.k_buddy.ui.createListings.CreateListingsActivity
 
 class ListingsFragment : Fragment() {
 
@@ -35,7 +32,7 @@ class ListingsFragment : Fragment() {
         binding.recyclerView.adapter = ListingsAdapter(viewModel.items)
 
         binding.buttonCreateListing.setOnClickListener {
-            val intent = Intent(requireActivity(), createListingsActivity::class.java)
+            val intent = Intent(requireActivity(), CreateListingsActivity::class.java)
             startActivity(intent)
         }
     }

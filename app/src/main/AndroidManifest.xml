@@ -32,7 +32,7 @@
             android:name=".ui.createItinerary.createItineraryActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.createListings.createListingsActivity"
+            android:name=".ui.createListings.CreateListingsActivity"
             android:exported="false" />
 
         <activity
