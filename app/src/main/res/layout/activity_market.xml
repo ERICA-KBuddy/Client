@@ -11,9 +11,8 @@
         android:background="@drawable/orange_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:orientation="horizontal"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="70dp">
         <ImageView
             android:layout_width="39dp"
@@ -22,7 +21,6 @@
             android:src="@drawable/kbuddy"/>
 
         <EditText
-            android:layout_weight="1"
             android:layout_width="300dp"
             android:layout_height="31dp"
             android:layout_marginLeft="12dp"
@@ -40,6 +38,7 @@
             android:layout_marginStart="20dp"
             android:src="@drawable/temp2">
         </ImageView>
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/filter"
@@ -68,7 +67,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/market_recycler_view"
+        android:id="@+id/recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"

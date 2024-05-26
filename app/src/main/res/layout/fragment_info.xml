@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Info"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet consectetur. At ut\nmalesuada auctor a sit vitae at dictum vitae. Vel id\nsed amet quam blandit leo quis at. Eu varius sit eu\nut. Sceierisque accumsan mattis nisi turpis leo\ntristique tellus risus tincidunt. Faucibus aenean\nlorem ornare gravida nibh quis portitor. Lorem\nipsum dolor sit amet consectetur. At ut malesuada\nauctor a sit vitae at dictum vitae. Vel id sed amet\nquam blandit leo quis at. Eu varius sit eu ut. Lorem\nipsum dolor sit amet consectetur. At ut malesuada\nauctor a sit vitae at dictum vitae."/>
+    </LinearLayout>
+</ScrollView>
