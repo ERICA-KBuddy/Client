@@ -179,13 +179,19 @@
                     android:textColor="@color/black"
                     android:layout_marginHorizontal="15dp" />
                 <Button
+                    android:id="@+id/add_place_button"
                     android:layout_width="90dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="60dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/edit_profile_round_button_3"
                     android:text="+     Add"/>
-
+                <Spinner
+                    android:id="@+id/placeSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:entries="@array/add_button_item" />
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
