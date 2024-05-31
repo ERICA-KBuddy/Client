@@ -7,12 +7,15 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.k_buddy.R
 import com.example.k_buddy.databinding.ActivityCreateItineraryBinding
 
 class CreateItineraryActivity : AppCompatActivity() {
     private val createItineraryViewModel: CreateItineraryViewModel by viewModels()
     private lateinit var binding: ActivityCreateItineraryBinding
+    private lateinit var placeAdapter: PlaceAdapter
     private lateinit var intent: Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +38,23 @@ class CreateItineraryActivity : AppCompatActivity() {
                 // 선택된 항목을 ViewModel에 저장
                 val selectedItem = parent.getItemAtPosition(position).toString()
                 createItineraryViewModel.selectAddItem(selectedItem)
+                createItineraryViewModel.addPlace(Place("","",""))
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // 아무 항목도 선택되지 않은 경우
             }
         }
+
+        // RecyclerView 설정
+        placeAdapter = PlaceAdapter()
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = placeAdapter
+
+        // ViewModel의 items 관찰하여 RecyclerView 업데이트
+        createItineraryViewModel.places.observe(this, Observer { places ->
+            placeAdapter.updateItems(places)
+        })
 
         /*
             뒤로가기 버튼 클릭
@@ -61,6 +75,7 @@ class CreateItineraryActivity : AppCompatActivity() {
          */
         binding.addPlaceButton.setOnClickListener {
             placeSpinner.performClick()
+//            placeAdapter.addPlace(Place())
         }
         /*
             add 박스

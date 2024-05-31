@@ -14,5 +14,23 @@ class CreateItineraryViewModel : ViewModel() {
     fun selectAddItem(item: String) {
         _result_add_item_button.value = item
         Log.e("hyunsu_Tst",item.toString())
+        addPlace(Place("", "", ""))
     }
+
+    private val _places = MutableLiveData<MutableList<Place>>(mutableListOf())
+    val places: LiveData<MutableList<Place>> get() = _places
+
+    fun addPlace(place: Place) {
+        val updatedPlaces = _places.value ?: mutableListOf()
+        updatedPlaces.add(place)
+        _places.value = updatedPlaces
+    }
+
+    fun updatePlace(position: Int, place: Place) {
+        _places.value?.let {
+            it[position] = place
+            _places.value = it
+        }
+    }
+
 }
