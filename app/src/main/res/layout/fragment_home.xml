@@ -10,44 +10,50 @@
         android:id="@+id/top_linear1"
         android:orientation="vertical"
         android:layout_width="0dp"
-        android:layout_height="324dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/orange_background">
-        <LinearLayout
-            android:orientation="horizontal"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp">
-            <ImageView
-                android:layout_width="39dp"
-                android:layout_height="34dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="11dp"
-                android:src="@drawable/kbuddy"/>
-            <EditText
-                android:layout_weight="1"
-                android:layout_marginTop="11dp"
-                android:layout_width="300dp"
-                android:layout_height="31dp"
-                android:drawableStart="@drawable/temp"
-                android:paddingStart="10dp"
-                android:hint="Search KBuddy"
-                android:drawablePadding="10dp"
-                android:textSize="15dp"
-                android:textColorHint="#7E7A7A"
-                android:background="@drawable/ground_box"
-                android:layout_marginLeft="12dp"/>
+            android:layout_height="70dp">
+            <LinearLayout
+                android:gravity="center"
+                android:background="@drawable/orange_background"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+                <ImageView
+                    android:layout_width="39dp"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="7dp"
+                    android:src="@drawable/kbuddy"/>
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/temp2">
-            </ImageView>
+                <EditText
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="31dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@drawable/ground_box"
+                    android:drawableStart="@drawable/temp"
+                    android:drawablePadding="10dp"
+                    android:hint="Search KBuddy"
+                    android:paddingStart="10dp"
+                    android:textColorHint="#7E7A7A"
+                    android:textSize="15dp" />
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/temp2">
+                </ImageView>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -72,6 +78,7 @@
             tools:layout_editor_absoluteX="0dp"
             tools:listitem="@layout/item_recommend" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/place"
         app:layout_constraintTop_toBottomOf="@+id/top_linear1"
@@ -84,13 +91,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="14dp"
         android:textStyle="bold"/>
+
     <LinearLayout
-        android:layout_marginLeft="14dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/place"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/top_linear2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="50dp">
         <ImageView
             android:padding="5dp"
@@ -103,17 +111,19 @@
         <TextView
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/text_box"
             android:text="Restaurant"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:layout_marginLeft="15dp"/>
         <TextView
+            android:padding="5dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_width="110dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@drawable/text_box"
             android:text="Cafe/Dessert"
@@ -121,32 +131,36 @@
             android:textSize="15dp"
             android:layout_marginLeft="15dp"/>
         <TextView
+            android:padding="5dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@drawable/text_box"
             android:text="Shopping"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:layout_marginLeft="15dp"/>
-
     </LinearLayout>
+
     <View
         android:id="@+id/line1"
         app:layout_constraintTop_toBottomOf="@+id/top_linear2"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#C2C1C1"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/all_place_recyclerview"
         app:layout_constraintTop_toBottomOf="@+id/line1"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/item_all_place"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
