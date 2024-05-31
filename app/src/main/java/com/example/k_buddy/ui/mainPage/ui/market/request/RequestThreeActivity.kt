@@ -14,7 +14,7 @@ class RequestThreeActivity : AppCompatActivity() {
         binding = ActivityRequestThreeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportFragmentManager.beginTransaction()
-            .add(binding.fragmentRequest.id,Request2Fragment())
+            .add(binding.fragmentRequest.id,Request3Fragment())
             .commit()
         binding.next.setOnClickListener {
             startActivity(Intent(this@RequestThreeActivity,RequestFourActivity::class.java))
