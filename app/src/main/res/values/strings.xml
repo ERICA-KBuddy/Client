@@ -4,4 +4,9 @@
     <string name="title_home">Home</string>
     <string name="title_market">Market</string>
     <string name="title_mypage">MyPage</string>
+
+    <string-array name="add_button_item">
+        <item>Add a place</item>
+        <item>Add a transportation</item>
+    </string-array>
 </resources>
