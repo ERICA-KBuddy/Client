@@ -1,12 +1,15 @@
 package com.example.k_buddy.ui.createItinerary
 
+import CreateItineraryViewModel
+import ItineraryAdapter
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.k_buddy.R
@@ -15,8 +18,10 @@ import com.example.k_buddy.databinding.ActivityCreateItineraryBinding
 class CreateItineraryActivity : AppCompatActivity() {
     private val createItineraryViewModel: CreateItineraryViewModel by viewModels()
     private lateinit var binding: ActivityCreateItineraryBinding
-    private lateinit var placeAdapter: PlaceAdapter
+    private lateinit var itineraryAdapter: ItineraryAdapter
     private lateinit var intent: Intent
+    private var isFirstLoad = true // 플래그 추가
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateItineraryBinding.inflate(layoutInflater)
@@ -31,30 +36,50 @@ class CreateItineraryActivity : AppCompatActivity() {
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         placeSpinner.adapter = adapter
+        placeSpinner.isFocusable = false // 초기화 시 선택 이벤트가 발생하지 않도록 설정
+        placeSpinner.isFocusableInTouchMode = false
+
+        // RecyclerView 설정
+        itineraryAdapter = ItineraryAdapter()
+        binding.recyclerView.adapter = itineraryAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // ViewModel의 items 관찰하여 RecyclerView 업데이트
+        createItineraryViewModel.items.observe(this, Observer { items ->
+            itineraryAdapter.updateItems(items)
+            if (items.isNotEmpty()) {
+                binding.recyclerView.visibility = View.VISIBLE
+            }
+        })
 
         // Spinner 선택 리스너 설정
         placeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                // 선택된 항목을 ViewModel에 저장
+                if (isFirstLoad) {
+                    isFirstLoad = false // 첫 로드 시에는 선택 이벤트를 무시
+                    return
+                }
+
                 val selectedItem = parent.getItemAtPosition(position).toString()
-                createItineraryViewModel.selectAddItem(selectedItem)
-                createItineraryViewModel.addPlace(Place("","",""))
+                Log.e("hyunsu", "선택리스너 $selectedItem")
+                when (selectedItem) {
+                    "Add a place" -> {
+                        createItineraryViewModel.addPlace(Place("", "", ""))
+                        Log.e("hyunsu", "Place 추가됨")
+                    }
+                    "Add a transportation" -> {
+                        createItineraryViewModel.addTransport(Transport("", "", ""))
+                        Log.e("hyunsu", "Transportation 추가됨")
+                    }
+                }
+                placeSpinner.isFocusable = true // 선택 이벤트 발생 후 다시 포커스를 설정
+                placeSpinner.setSelection(0) // 선택 후 스피너 초기화
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-                // 아무 항목도 선택되지 않은 경우
+                Log.e("hyunsu", "onNothingSelected $parent")
             }
         }
-
-        // RecyclerView 설정
-        placeAdapter = PlaceAdapter()
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = placeAdapter
-
-        // ViewModel의 items 관찰하여 RecyclerView 업데이트
-        createItineraryViewModel.places.observe(this, Observer { places ->
-            placeAdapter.updateItems(places)
-        })
 
         /*
             뒤로가기 버튼 클릭
@@ -62,6 +87,7 @@ class CreateItineraryActivity : AppCompatActivity() {
         binding.btnSaveExit.setOnClickListener {
             finish()
         }
+
         /*
         여행기 작성 버튼 클릭
         */
@@ -70,18 +96,23 @@ class CreateItineraryActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
         /*
             add 버튼
          */
         binding.addPlaceButton.setOnClickListener {
             placeSpinner.performClick()
-//            placeAdapter.addPlace(Place())
         }
+
         /*
             add 박스
          */
-        binding.addItineraryBox.setOnClickListener{
-            placeSpinner.performClick()
+        binding.addItineraryBox.setOnClickListener {
+            createItineraryViewModel.toggleContainerVisibility()
         }
+    }
+
+    private fun containerVisibility(bool: Boolean) {
+        binding.recyclerView.visibility = if (bool) View.VISIBLE else View.GONE
     }
 }

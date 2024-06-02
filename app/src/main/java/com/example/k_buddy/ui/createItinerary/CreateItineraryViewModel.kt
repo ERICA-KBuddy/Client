@@ -1,36 +1,39 @@
-package com.example.k_buddy.ui.createItinerary
-
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.k_buddy.ui.util.ToastHelper
+import com.example.k_buddy.ui.createItinerary.Place
+import com.example.k_buddy.ui.createItinerary.Transport
 
 class CreateItineraryViewModel : ViewModel() {
 
-    private val _result_add_item_button = MutableLiveData<String>()
-    val selectedItem: LiveData<String> get() = _result_add_item_button
+    private val _items = MutableLiveData<List<ItineraryItem>>()
+    val items: LiveData<List<ItineraryItem>> get() = _items
 
-    fun selectAddItem(item: String) {
-        _result_add_item_button.value = item
-        Log.e("hyunsu_Tst",item.toString())
-        addPlace(Place("", "", ""))
+    private val currentItems = mutableListOf<ItineraryItem>()
+
+    private val _containerVisibility = MutableLiveData<Boolean>()
+    val containerVisibility: LiveData<Boolean> get() = _containerVisibility
+
+    init {
+        _containerVisibility.value = false
     }
-
-    private val _places = MutableLiveData<MutableList<Place>>(mutableListOf())
-    val places: LiveData<MutableList<Place>> get() = _places
 
     fun addPlace(place: Place) {
-        val updatedPlaces = _places.value ?: mutableListOf()
-        updatedPlaces.add(place)
-        _places.value = updatedPlaces
+        currentItems.add(ItineraryItem.PlaceItem(place))
+        _items.value = currentItems
     }
 
-    fun updatePlace(position: Int, place: Place) {
-        _places.value?.let {
-            it[position] = place
-            _places.value = it
-        }
+    fun addTransport(transport: Transport) {
+        currentItems.add(ItineraryItem.TransportItem(transport))
+        _items.value = currentItems
     }
 
+    fun toggleContainerVisibility() {
+        _containerVisibility.value = !_containerVisibility.value!!
+    }
+}
+
+sealed class ItineraryItem {
+    data class PlaceItem(val place: Place) : ItineraryItem()
+    data class TransportItem(val transport: Transport) : ItineraryItem()
 }

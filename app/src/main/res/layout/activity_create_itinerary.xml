@@ -180,7 +180,7 @@
                     android:layout_marginHorizontal="15dp" />
                 <Button
                     android:id="@+id/add_place_button"
-                    android:layout_width="90dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="60dp"
                     android:layout_gravity="center_vertical"
@@ -190,7 +190,7 @@
                     android:id="@+id/placeSpinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
+                    android:visibility="invisible"
                     android:entries="@array/add_button_item" />
             </LinearLayout>
             <LinearLayout
@@ -199,12 +199,11 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@id/button_container"
-                    android:visibility="gone"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     tools:listitem="@layout/item_place"/>
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

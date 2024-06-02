@@ -6,7 +6,23 @@
     <string name="title_mypage">MyPage</string>
 
     <string-array name="add_button_item">
+        <item>select</item>
         <item>Add a place</item>
         <item>Add a transportation</item>
     </string-array>
+
+    <string-array name="transport_types">
+        <item>select</item>
+        <item>Walking</item>
+        <item>Driving</item>
+        <item>Subway</item>
+        <item>Bus</item>
+    </string-array>
+
+    <string-array name="duration_units">
+        <item>select</item>
+        <item>min</item>
+        <item>hour</item>
+    </string-array>
+
 </resources>
