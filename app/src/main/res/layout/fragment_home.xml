@@ -58,15 +58,16 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/white"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="26dp"
-            android:text="Featured Places in Seoul"
-            android:textSize="20dp"
-            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="7dp"
-            android:textStyle="bold"/>
+            android:text="Featured Places in Seoul"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recommend_recyclerview"
@@ -81,66 +82,71 @@
 
     <TextView
         android:id="@+id/place"
-        app:layout_constraintTop_toBottomOf="@+id/top_linear1"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="26dp"
-        android:text="All Places in Seoul"
-        android:textSize="20dp"
-        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
-        android:layout_marginLeft="14dp"
-        android:textStyle="bold"/>
+        android:text="All Places in Seoul"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_linear1" />
 
     <LinearLayout
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/place"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/top_linear2"
         android:layout_width="0dp"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place">
+
         <ImageView
-            android:padding="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/text_box"
-            android:src="@drawable/filter"/>
-        <TextView
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:padding="5dp"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/text_box"
+            android:padding="5dp"
+            android:src="@drawable/filter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/text_box"
+            android:gravity="center"
+            android:padding="5dp"
             android:text="Restaurant"
             android:textColor="@color/black"
-            android:textSize="15dp"
-            android:layout_marginLeft="15dp"/>
+            android:textSize="15dp" />
+
         <TextView
-            android:padding="5dp"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
             android:background="@drawable/text_box"
+            android:gravity="center"
+            android:padding="5dp"
             android:text="Cafe/Dessert"
             android:textColor="@color/black"
-            android:textSize="15dp"
-            android:layout_marginLeft="15dp"/>
+            android:textSize="15dp" />
+
         <TextView
-            android:padding="5dp"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
             android:background="@drawable/text_box"
+            android:gravity="center"
+            android:padding="5dp"
             android:text="Shopping"
             android:textColor="@color/black"
-            android:textSize="15dp"
-            android:layout_marginLeft="15dp"/>
+            android:textSize="15dp" />
     </LinearLayout>
 
     <View

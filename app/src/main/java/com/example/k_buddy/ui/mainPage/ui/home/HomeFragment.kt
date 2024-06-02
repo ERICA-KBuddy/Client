@@ -39,15 +39,18 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recommendDataList.apply {
-            add(recommendItem("temp","temp","4.5","(15 reviews)", R.drawable.temp3))
-            add(recommendItem("temp","temp","4.5","(15 reviews)", R.drawable.temp3))
-            add(recommendItem("temp","temp","4.5","(15 reviews)", R.drawable.temp3))
-            add(recommendItem("temp","temp","4.5","(15 reviews)", R.drawable.temp3))
+            add(recommendItem("temp","temp","4.5","(15 reviews)", R.drawable.sample_place_4))
+            add(recommendItem("temp","temp","4.5","(15 reviews)", R.drawable.sample_place_6))
+            add(recommendItem("temp","temp","4.5","(15 reviews)", R.drawable.sample_place_5))
+            add(recommendItem("temp","temp","4.5","(15 reviews)", R.drawable.sample_place_1))
         }
         allPlaceDataList.apply {
-            add(allPlaceItem("Place 1", R.drawable.temp3))
-            add(allPlaceItem("Place 2", R.drawable.temp3))
-            add(allPlaceItem("Place 3", R.drawable.temp3))
+            add(allPlaceItem("Place 1", R.drawable.sample_place_1))
+            add(allPlaceItem("Place 2", R.drawable.sample_place_2))
+            add(allPlaceItem("Place 3", R.drawable.sample_place_3))
+            add(allPlaceItem("Place 3", R.drawable.sample_place_7))
+            add(allPlaceItem("Place 3", R.drawable.sample_place_8))
+            add(allPlaceItem("Place 3", R.drawable.sample_place_9))
         }
         val recommend_adapter =  RecommendAdapter(recommendDataList)
         val allPlace_adapter = AllPlaceAdapter(allPlaceDataList)

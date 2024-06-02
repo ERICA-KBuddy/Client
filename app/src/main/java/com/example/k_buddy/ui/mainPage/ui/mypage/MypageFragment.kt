@@ -39,13 +39,6 @@ class MypageFragment : Fragment() {
             startActivity(intent)
         }
         /*
-            edit_profile_button 클릭 시 동작
-         */
-        binding.editProfileButton.setOnClickListener {
-            val intent = Intent(requireActivity(), EditListingsActivity::class.java)
-            startActivity(intent)
-        }
-        /*
             notification_button 클릭 시
          */
         binding.notificationIcon.setOnClickListener {

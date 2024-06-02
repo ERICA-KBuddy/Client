@@ -10,15 +10,15 @@
         android:id="@+id/cardview1"
         android:layout_width="240dp"
         android:layout_height="127dp"
-        app:cardCornerRadius="7dp"
+        app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
         <ImageView
-            android:layout_marginTop="10dp"
             android:id="@+id/image1"
             android:layout_width="240dp"
             android:layout_height="120dp"
+            android:scaleType="fitXY"
             android:src="@drawable/temp3"/>
     </androidx.cardview.widget.CardView>
     <TextView

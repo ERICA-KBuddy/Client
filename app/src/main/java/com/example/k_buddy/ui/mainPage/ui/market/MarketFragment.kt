@@ -43,9 +43,11 @@ class MarketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataList.apply {
-            add(marketItem("Item 1", "@Seller1", "4.5", "#Hashtag1 #Hashtag2", "1 day", "15,000 won", R.drawable.market_image))
-            add(marketItem("Item 2", "@Seller2", "4.0", "#Hashtag3 #Hashtag4", "2 days", "20,000 won", R.drawable.market_image))
-            add(marketItem("Item 3", "@Seller3", "4.7", "#Hashtag5 #Hashtag6", "3 days", "25,000 won", R.drawable.market_image))
+            add(marketItem("Item 1", "@Seller1", "4.5", "#Hashtag1 #Hashtag2", "1 day", "15,000 won", R.drawable.sample_place_3))
+            add(marketItem("Item 2", "@Seller2", "4.0", "#Hashtag3 #Hashtag4", "2 days", "20,000 won", R.drawable.sample_place_2))
+            add(marketItem("Item 3", "@Seller3", "4.7", "#Hashtag5 #Hashtag6", "3 days", "25,000 won", R.drawable.sample_place_9))
+            add(marketItem("Item 3", "@Seller3", "4.7", "#Hashtag5 #Hashtag6", "3 days", "25,000 won", R.drawable.sample_place_4))
+            add(marketItem("Item 3", "@Seller3", "4.7", "#Hashtag5 #Hashtag6", "3 days", "25,000 won", R.drawable.sample_place_5))
         }
         val market_adapter =  MarketAdapter(dataList) { item ->
             val intent = Intent(activity, ConnectionActivity::class.java)
