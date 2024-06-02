@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.K_Buddy"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.SubmitItinerary.SubmitItineraryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ReviewItinerary.ReviewItineraryActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.mainPage.ui.market.request.RequestFourActivity"
             android:exported="false" />
@@ -34,19 +39,19 @@
         <activity
             android:name=".ui.createListings.CreateListingsActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.mainPage.MainPageActivity"
             android:exported="false"
             android:label="@string/title_activity_main_page" />
         <activity
-            android:name=".ui.profileEdit.profileEditActivity"
+            android:name=".ui.profileEdit.EditListingsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

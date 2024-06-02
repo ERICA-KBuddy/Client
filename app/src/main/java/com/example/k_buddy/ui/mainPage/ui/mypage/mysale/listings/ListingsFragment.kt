@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.k_buddy.databinding.FragmentListingsBinding
-import com.example.k_buddy.ui.createListings.CreateListingsActivity
+import com.example.k_buddy.ui.profileEdit.EditListingsActivity
 
 class ListingsFragment : Fragment() {
 
@@ -32,7 +32,7 @@ class ListingsFragment : Fragment() {
         binding.recyclerView.adapter = ListingsAdapter(viewModel.items)
 
         binding.buttonCreateListing.setOnClickListener {
-            val intent = Intent(requireActivity(), CreateListingsActivity::class.java)
+            val intent = Intent(requireActivity(), EditListingsActivity::class.java)
             startActivity(intent)
         }
     }

@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.k_buddy.databinding.FragmentMypageBinding
 import com.example.k_buddy.ui.mainPage.MainPageActivity
 import com.example.k_buddy.ui.myPage.MyPageAdapter
-import com.example.k_buddy.ui.profileEdit.profileEditActivity
+import com.example.k_buddy.ui.profileEdit.EditListingsActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MypageFragment : Fragment() {
@@ -42,7 +42,7 @@ class MypageFragment : Fragment() {
             edit_profile_button 클릭 시 동작
          */
         binding.editProfileButton.setOnClickListener {
-            val intent = Intent(requireActivity(), profileEditActivity::class.java)
+            val intent = Intent(requireActivity(), EditListingsActivity::class.java)
             startActivity(intent)
         }
         /*

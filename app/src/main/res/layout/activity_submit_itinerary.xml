@@ -1,0 +1,173 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.ReviewItinerary.ReviewItineraryActivity">
+
+    <!-- 상단 고정 영역 -->
+    <RelativeLayout
+        android:id="@+id/top_fixed_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_save_exit"
+            android:layout_width="90dp"
+            android:layout_height="26dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/edit_profile_round_button_1"
+            android:textSize="10dp"
+            android:text="Save &amp; Exit" />
+
+        <Button
+            android:id="@+id/btn_help"
+            android:layout_width="100dp"
+            android:layout_height="26dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/edit_profile_round_button_1"
+            android:textSize="10dp"
+            android:text="Help" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_fixed_layout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <!-- 페이지 단계 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_save_exit"
+                android:gravity="center"
+                android:background="@drawable/create_itinerary_progress_background"
+                android:paddingVertical="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/progressed_circle" />
+
+                    <View
+                        android:layout_width="125dp"
+                        android:layout_height="2dp"
+                        android:background="@color/custom_checked_color" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/progressed_circle" />
+
+                    <View
+                        android:layout_width="125dp"
+                        android:layout_height="2dp"
+                        android:background="@color/custom_checked_color" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/progressed_circle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Input\nItinerary"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Review\nItinerary"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Submit"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="100dp"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:padding="20dp"
+                    android:background="@drawable/submit_center_circle"
+                    android:src="@drawable/schedule_1"/>
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/black"
+                    android:text="Congrats!"/>
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="40dp"
+                    android:textAlignment="center"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your listing has been successfully\nsubmitted. The K-Buddy team will review it within the next 48 hours. Once approved, you’ll be able to view your listing in the market section."/>
+
+                <Button
+                    android:id="@+id/submit_button"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OK"
+                    android:textColor="@color/white"
+                    android:background="@drawable/onboard_red_button"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- 하단 버튼 -->
+    </ScrollView>
+</RelativeLayout>

@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.k_buddy.R
 import com.example.k_buddy.databinding.ActivityCreateItineraryBinding
+import com.example.k_buddy.ui.ReviewItinerary.ReviewItineraryActivity
 
 class CreateItineraryActivity : AppCompatActivity() {
     private val createItineraryViewModel: CreateItineraryViewModel by viewModels()
@@ -92,7 +93,7 @@ class CreateItineraryActivity : AppCompatActivity() {
         여행기 작성 버튼 클릭
         */
         binding.nextButton.setOnClickListener {
-            intent = Intent(this, ActivityCreateItineraryBinding::class.java)
+            intent = Intent(this, ReviewItineraryActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -43,6 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/button_container"
+        android:clickable="true"
         android:layout_marginTop="8dp"
         tools:listitem="@layout/item_mysale"/>
 
