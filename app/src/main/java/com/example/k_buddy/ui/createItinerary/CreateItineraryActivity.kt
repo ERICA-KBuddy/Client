@@ -1,7 +1,6 @@
 package com.example.k_buddy.ui.createItinerary
 
 import CreateItineraryViewModel
-import ItineraryAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -69,7 +68,7 @@ class CreateItineraryActivity : AppCompatActivity() {
                         Log.e("hyunsu", "Place 추가됨")
                     }
                     "Add a transportation" -> {
-                        createItineraryViewModel.addTransport(Transport("", "", ""))
+                        createItineraryViewModel.addTransport(Transport(0,"", 0, ""))
                         Log.e("hyunsu", "Transportation 추가됨")
                     }
                 }

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.k_buddy.R
 import com.example.k_buddy.databinding.ActivityReviewItineraryBinding
 import com.example.k_buddy.ui.SubmitItinerary.SubmitItineraryActivity
@@ -19,6 +20,8 @@ class ReviewItineraryActivity : AppCompatActivity() {
         binding = ActivityReviewItineraryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         binding.nextButton.setOnClickListener {
             intent = Intent(this, SubmitItineraryActivity::class.java)
             startActivity(intent)
@@ -27,6 +30,12 @@ class ReviewItineraryActivity : AppCompatActivity() {
 
         binding.btnSaveExit.setOnClickListener {
             finish()
+        }
+
+        var sectionIsVisible = false
+        binding.itineraryBox.setOnClickListener{
+            sectionIsVisible = !sectionIsVisible
+            binding.itinerarySection.visibility = if (sectionIsVisible) View.VISIBLE else View.GONE
         }
     }
 }
