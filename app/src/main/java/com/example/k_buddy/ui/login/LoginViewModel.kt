@@ -1,5 +1,6 @@
 package com.example.k_buddy.ui.login
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +15,9 @@ class LoginViewModel : ViewModel() {
 
     private val onBoardingRepository: OnBoardingRepository = OnBoardingRepositoryImpl()
 
+    val pingTestResult = MutableLiveData<Response<Any>>()
+    val pingTestError = MutableLiveData<String>()
+
     val loginResult = MutableLiveData<Response<Any>>()
     val loginError = MutableLiveData<String>()
 
@@ -23,13 +27,28 @@ class LoginViewModel : ViewModel() {
     private val _logInVisibility = MutableLiveData(false)
     val logInVisibility: LiveData<Boolean> get() = _logInVisibility
 
-    fun login(username: String, password: String) {
-        val requestDTO = UserLoginReqDTO(username, password)
+    fun login(identifier: String, password: String) {
+        val requestDTO = UserLoginReqDTO(identifier, password)
         viewModelScope.launch {
             try {
                 val response = onBoardingRepository.userLogin(requestDTO)
+                Log.e("hyunsu", "login$response")
             } catch (e: Exception) {
                 loginError.postValue(e.message)
+                Log.e("hyunsu", "loginError$e")
+            }
+        }
+    }
+
+    fun testPing() {
+        viewModelScope.launch {
+            try {
+                val response = onBoardingRepository.testPing()
+                Log.e("hyunsu", "ping$response")
+                // Handle the response as needed
+            } catch (e: Exception) {
+                Log.e("hyunsu", "ping$e")
+                // Handle the error as needed
             }
         }
     }

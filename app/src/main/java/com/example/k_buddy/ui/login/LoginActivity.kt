@@ -54,8 +54,10 @@ class LoginActivity : AppCompatActivity() {
         binding.buttonLogIn.setOnClickListener {
             // Handle log in logic
 
-//            val username = binding.editTextLoginUserId.text.toString()
+//            val identifier = binding.editTextLoginUserId.text.toString()
 //            val password = binding.editTextLoginPassword.text.toString()
+
+//            loginViewModel.testPing()
 
             /*
                 임시로 화면 전환
@@ -64,17 +66,21 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
 
-            //        loginViewModel.loginResult.observe(this, Observer { response ->
+
+
+//            loginViewModel.login(identifier, password)
+//
+//            loginViewModel.loginResult.observe(this, Observer { response ->
 //            if (response.isSuccessful) {
 //                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-//            } else {
-//                Toast.makeText(this, "Login failed: ${response.message()}", Toast.LENGTH_SHORT).show()
-//            }
-//        })
+//                } else {
+//                    Toast.makeText(this, "Login failed: ${response.message()}", Toast.LENGTH_SHORT).show()
+//                }
+//            })
 //
-//        loginViewModel.loginError.observe(this, Observer { error ->
-//            Toast.makeText(this, "Error: $error", Toast.LENGTH_SHORT).show()
-//        })
+//            loginViewModel.loginError.observe(this, Observer { error ->
+//                Toast.makeText(this, "Error: $error", Toast.LENGTH_SHORT).show()
+//            })
         }
 
         /*
