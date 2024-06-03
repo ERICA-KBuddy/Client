@@ -22,7 +22,7 @@ class SubmitItineraryActivity : AppCompatActivity() {
         }
 
         binding.submitButton.setOnClickListener {
-            intent = Intent(this, WritingReviewActivity::class.java)
+            intent = Intent(this, MainPageActivity::class.java)
             startActivity(intent)
             finish()
         }
