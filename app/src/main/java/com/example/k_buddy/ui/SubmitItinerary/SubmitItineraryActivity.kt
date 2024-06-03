@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.k_buddy.R
 import com.example.k_buddy.databinding.ActivitySubmitItineraryBinding
+import com.example.k_buddy.ui.WritingReview.WritingReviewActivity
 import com.example.k_buddy.ui.mainPage.MainPageActivity
 
 class SubmitItineraryActivity : AppCompatActivity() {
@@ -21,7 +22,7 @@ class SubmitItineraryActivity : AppCompatActivity() {
         }
 
         binding.submitButton.setOnClickListener {
-            intent = Intent(this, MainPageActivity::class.java)
+            intent = Intent(this, WritingReviewActivity::class.java)
             startActivity(intent)
             finish()
         }

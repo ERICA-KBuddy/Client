@@ -13,6 +13,12 @@
         android:theme="@style/Theme.K_Buddy"
         tools:targetApi="31">
         <activity
+            android:name=".ui.WritingReview.WritingReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.OrderedItinerary.OrderedItineraryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SubmitItinerary.SubmitItineraryActivity"
             android:exported="false" />
         <activity

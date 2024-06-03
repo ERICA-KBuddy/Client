@@ -1,5 +1,6 @@
 package com.example.k_buddy.ui.mainPage.ui.mypage.orders
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +10,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.k_buddy.databinding.FragmentOrdersBinding
+import com.example.k_buddy.ui.OrderedItinerary.OrderedItineraryActivity
+import com.example.k_buddy.ui.createItinerary.CreateItineraryActivity
+import com.example.k_buddy.ui.mainPage.ui.mypage.mysale.sales.SalesAdapter
 
 class OrdersFragment : Fragment() {
 
@@ -28,8 +32,14 @@ class OrdersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val adapter = OrdersAdapter(viewModel.items) { item ->
+            val intent = Intent(activity, OrderedItineraryActivity::class.java)
+            // 필요한 데이터를 인텐트에 추가
+            startActivity(intent)
+        }
+
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        binding.recyclerView.adapter = OrdersAdapter(viewModel.items)
+        binding.recyclerView.adapter = adapter
     }
 
     override fun onDestroyView() {
